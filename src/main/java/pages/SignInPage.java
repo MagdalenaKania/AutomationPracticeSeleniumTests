@@ -36,9 +36,9 @@ public class SignInPage {
         return this;
     }
 
-    public PersonalInformationsPage clickOnCreateAnAccountButton() {
+    public PersonalInformationPage clickOnCreateAnAccountButton() {
         btnCreateAccount.click();
-        return new PersonalInformationsPage();
+        return new PersonalInformationPage();
     }
 
     public SignInPage inputEmailToLogin(String email) {
@@ -56,6 +56,10 @@ public class SignInPage {
         return new MyAccountPage();
     }
 
+    public AddressesPage  clickOnSignInToOrder(){
+        btnSubmitLogin.click();
+        return new AddressesPage();
+    }
 public String getTextFromHeading(){
        return headingSignIn.getText();
 }
