@@ -18,6 +18,11 @@ public class MyAccountPage {
     @FindBy(css="a.logout")
     private WebElement btnSignOut;
 
+    @FindBy(xpath = "//a[@title='Home']")
+    private WebElement btnHome;
+
+
+
 public String getTextFromHeading(){
     return heading.getText();
 }
@@ -25,5 +30,11 @@ public String getTextFromHeading(){
 public SignInPage clickOnSignOutButton(){
     btnSignOut.click();
     return new SignInPage();
+}
+
+public HomePage clickOnHomeButton(){
+    btnHome.click();
+    return new HomePage();
+
 }
 }

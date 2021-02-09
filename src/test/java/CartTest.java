@@ -7,11 +7,11 @@ public class CartTest extends BaseTest {
     private HomePage homePage = new HomePage();
 
     @Test
-    public void asNotLoginUserIShallBuyProduct() {
+    public void asLoginUserIShallBuyProduct() {
         boolean orderConfirmed = homePage.clickOnEveningDressesLink()
                 .proceedingToCheckout()
                 .clickOnProceedToCheckoutButton()
-                .inputEmailToLogin("ordertest@example.com")
+                .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")
                 .clickOnSignInToOrder()
                 .clickOnProceedToCheckoutButton()
@@ -23,4 +23,19 @@ public class CartTest extends BaseTest {
 
         assertTrue(orderConfirmed, "Order not confirmed");
     }
+
+@Test
+    public void asNotLoginUserIShallRemoveItemFromCart(){
+        boolean isCartEmpty = homePage.clickOnEveningDressesLink()
+                .addingToCart()
+                .viewShoppingCart()
+                .clickOnDeleteIcon()
+                .isCartEmpty();
+        assertTrue(isCartEmpty, "Cart is not empty!");
+
+
+
+
+}
+
 }

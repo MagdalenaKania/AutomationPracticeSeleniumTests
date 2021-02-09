@@ -32,8 +32,8 @@ public class SignInTest extends BaseTest {
     @Test
     public void asRegisteredUserShallILogin() {
         String textHeading = homePage.clickOnSignInPage()
-                .inputEmailToLogin("usertest@example.com")
-                .inputPasswordToLogin("automationpractice.com")
+                .inputEmailToLogin("testuser@example.com")
+                .inputPasswordToLogin("Password1234")
                 .clickOnSignInButton()
                 .getTextFromHeading();
         assertEquals("MY ACCOUNT", textHeading);
@@ -43,8 +43,8 @@ public class SignInTest extends BaseTest {
     @Test
     public void asLoggedUserShallILogOut() {
         String signInHeading = homePage.clickOnSignInPage()
-                .inputEmailToLogin("usertest@example.com")
-                .inputPasswordToLogin("automationpractice.com")
+                .inputEmailToLogin("testuser@example.com")
+                .inputPasswordToLogin("Password1234")
                 .clickOnSignInButton()
                 .clickOnSignOutButton()
                 .getTextFromHeading();

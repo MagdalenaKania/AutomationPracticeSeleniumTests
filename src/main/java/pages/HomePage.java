@@ -22,6 +22,9 @@ public class HomePage {
     @FindBy(css = "#block_top_menu > ul > li:nth-child(2) > ul > li:nth-child(2) > a")
     private WebElement linkEvngDrss;
 
+    @FindBy(xpath="//a[@title='Contact Us']")
+    private WebElement btnContactUs;
+
 
     public SignInPage clickOnSignInPage() {
         btnSignIN.click();
@@ -34,4 +37,8 @@ public class HomePage {
         return new EveningDressesPage();
     }
 
+    public ContactUsPage clickOnContactUs() {
+        btnContactUs.click();
+        return new ContactUsPage();
+    }
 }
