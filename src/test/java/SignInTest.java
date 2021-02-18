@@ -9,7 +9,7 @@ public class SignInTest extends BaseTest {
     private HomePage homePage = new HomePage();
 
     @Test
-    public void asNotRegisteredCustomerIShallCreateAnAccount() {
+    public void asNotRegisteredCustomerIShallCreateAnAccountTest() {
         String headingText = homePage.clickOnSignInPage()
                 .inputEmailToCreateAccount("example" + Math.random() + "@email.com")
                 .clickOnCreateAnAccountButton()
@@ -30,7 +30,7 @@ public class SignInTest extends BaseTest {
     }
 
     @Test
-    public void asRegisteredUserShallILogin() {
+    public void asRegisteredUserShallILoginTest() {
         String textHeading = homePage.clickOnSignInPage()
                 .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")
@@ -41,7 +41,7 @@ public class SignInTest extends BaseTest {
     }
 
     @Test
-    public void asLoggedUserShallILogOut() {
+    public void asLoggedUserShallILogOutTest() {
         String signInHeading = homePage.clickOnSignInPage()
                 .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")

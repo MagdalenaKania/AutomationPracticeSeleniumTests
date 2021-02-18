@@ -2,17 +2,11 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import static config.DriverHelper.getDriver;
-import static config.WaitHelper.explicitWait;
+public class ContactUsPage extends BasePage{
 
-public class ContactUsPage {
 
-    public ContactUsPage() {
-        PageFactory.initElements(getDriver(), this);
-    }
 
     @FindBy(css = "select#id_contact")
     private WebElement selectSubjectHeading;

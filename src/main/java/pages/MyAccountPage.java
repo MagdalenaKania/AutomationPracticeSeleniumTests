@@ -1,16 +1,16 @@
 package pages;
 
-import config.DriverHelper;
-import config.WaitHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class MyAccountPage {
-    public MyAccountPage(){
-        PageFactory.initElements(DriverHelper.getDriver(), this);
-        WaitHelper.explicitWait(heading);
+
+public class MyAccountPage extends BasePage {
+
+    public MyAccountPage() {
+        super();
+        explicitWait(heading);
     }
+
 
     @FindBy(css = "h1.page-heading")
     private WebElement heading;

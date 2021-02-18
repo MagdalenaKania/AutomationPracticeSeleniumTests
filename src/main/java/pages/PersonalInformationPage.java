@@ -1,17 +1,16 @@
 package pages;
 
-import config.DriverHelper;
-import config.WaitHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class PersonalInformationPage {
+public class PersonalInformationPage extends BasePage {
 
     public PersonalInformationPage() {
-        PageFactory.initElements(DriverHelper.getDriver(), this);
-        WaitHelper.explicitWait(inptFirstName);
+
+        super();
+        explicitWait(inptFirstName);
+
     }
 
 

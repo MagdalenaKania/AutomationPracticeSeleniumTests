@@ -3,14 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import static config.DriverHelper.getDriver;
-
-public class HomePage {
-    public HomePage() {
-        PageFactory.initElements(getDriver(), this);
-    }
+public class HomePage extends BasePage {
 
 
     @FindBy(css = "a.login")
@@ -33,7 +27,8 @@ public class HomePage {
 
     public EveningDressesPage clickOnEveningDressesLink() {
         Actions actions = new Actions(getDriver());
-        actions.moveToElement(btnDrss).click(linkEvngDrss).build().perform();
+        Actions elem = actions.moveToElement(btnDrss);
+        elem.click(linkEvngDrss).build().perform();
         return new EveningDressesPage();
     }
 

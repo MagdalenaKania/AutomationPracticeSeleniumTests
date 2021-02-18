@@ -7,7 +7,7 @@ public class CartTest extends BaseTest {
     private HomePage homePage = new HomePage();
 
     @Test
-    public void asLoginUserIShallBuyProduct() {
+    public void asLoginUserIShallBuyProductTest() {
         boolean orderConfirmed = homePage.clickOnEveningDressesLink()
                 .proceedingToCheckout()
                 .clickOnProceedToCheckoutButton()
@@ -25,7 +25,7 @@ public class CartTest extends BaseTest {
     }
 
 @Test
-    public void asNotLoginUserIShallRemoveItemFromCart(){
+    public void asNotLoginUserIShallRemoveItemFromCartTest(){
         boolean isCartEmpty = homePage.clickOnEveningDressesLink()
                 .addingToCart()
                 .viewShoppingCart()

@@ -1,15 +1,10 @@
 package pages;
 
-import config.DriverHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 
-public class SignInPage {
-    public SignInPage() {
-        PageFactory.initElements(DriverHelper.getDriver(), this);
-    }
+public class SignInPage extends BasePage {
 
     @FindBy(css = "input#email_create")
     private WebElement inptCreateEmail;

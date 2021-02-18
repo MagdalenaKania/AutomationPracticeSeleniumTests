@@ -8,7 +8,7 @@ public class ItemReviewTest extends BaseTest {
     private HomePage homePage = new HomePage();
 
     @Test
-    public void asLoginUserIShallAddItemReview() {
+    public void asLoginUserIShallAddItemReviewTest() {
         boolean isReviewAdded = homePage.clickOnSignInPage()
                 .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")

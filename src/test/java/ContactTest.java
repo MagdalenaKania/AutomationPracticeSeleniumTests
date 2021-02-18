@@ -13,7 +13,7 @@ public class ContactTest extends BaseTest {
     HomePage homePage = new HomePage();
 
     @Test
-    public void asLoginUserIShallSentFormWithAttachment() throws URISyntaxException {
+    public void asLoginUserIShallSentFormWithAttachmentTest() throws URISyntaxException {
         URL filePath = getClass().getClassLoader().getResource("test.txt");
         File file = Paths.get(filePath.toURI()).toFile();
         String absolutePath = file.getAbsolutePath();

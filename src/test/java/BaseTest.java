@@ -1,11 +1,13 @@
-import config.DriverHelper;
 import org.junit.jupiter.api.AfterEach;
+import pages.BasePage;
 
 public class BaseTest {
 
+    BasePage basePage = new BasePage();
+
     @AfterEach
     public void cleanUp() {
-        DriverHelper.closeDriver();
+        basePage.closeDriver();
     }
 
 }

@@ -1,18 +1,12 @@
 package pages;
 
-import config.WaitHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import static config.DriverHelper.getDriver;
-import static config.WaitHelper.explicitWait;
 
-public class ProductPage  {
 
-    public ProductPage(){
-        PageFactory.initElements(getDriver(), this);
-    }
+public class ProductPage extends BasePage {
+
 
     @FindBy(css = "a#new_comment_tab_btn")
     private WebElement firstReviewBtn;
