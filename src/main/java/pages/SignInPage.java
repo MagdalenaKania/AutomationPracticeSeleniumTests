@@ -1,12 +1,17 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
 public class SignInPage extends BasePage {
 
-    @FindBy(css = "input#email_create")
+    public SignInPage(WebDriver driver) {
+		super(driver);
+	}
+    
+	@FindBy(css = "input#email_create")
     private WebElement inptCreateEmail;
 
     @FindBy(css = "button#SubmitCreate")
@@ -33,7 +38,7 @@ public class SignInPage extends BasePage {
 
     public PersonalInformationPage clickOnCreateAnAccountButton() {
         btnCreateAccount.click();
-        return new PersonalInformationPage();
+        return new PersonalInformationPage(this.driver);
     }
 
     public SignInPage inputEmailToLogin(String email) {
@@ -48,12 +53,12 @@ public class SignInPage extends BasePage {
 
     public MyAccountPage clickOnSignInButton(){
         btnSubmitLogin.click();
-        return new MyAccountPage();
+        return new MyAccountPage(this.driver);
     }
 
     public AddressesPage  clickOnSignInToOrder(){
         btnSubmitLogin.click();
-        return new AddressesPage();
+        return new AddressesPage(this.driver);
     }
 public String getTextFromHeading(){
        return headingSignIn.getText();

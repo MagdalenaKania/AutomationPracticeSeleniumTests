@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -7,14 +8,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddressesPage extends BasePage {
 
-    @FindBy(css = "button[name = 'processAddress']")
+    public AddressesPage(WebDriver driver) {
+		super(driver);
+	}
+
+	@FindBy(css = "button[name = 'processAddress']")
     private WebElement btnProceedToCheckout;
-
-
 
     public ShippingPage clickOnProceedToCheckoutButton() {
         btnProceedToCheckout.click();
-        return new ShippingPage();
+        return new ShippingPage(this.driver);
     }
-
 }

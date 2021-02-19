@@ -1,16 +1,15 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class PersonalInformationPage extends BasePage {
 
-    public PersonalInformationPage() {
-
-        super();
+    public PersonalInformationPage(WebDriver driver) {
+        super(driver);
         explicitWait(inptFirstName);
-
     }
 
 
@@ -94,6 +93,6 @@ public class PersonalInformationPage extends BasePage {
 
     public MyAccountPage clickOnRegisterButton() {
         btnSubmit.click();
-        return new MyAccountPage();
+        return new MyAccountPage(this.driver);
     }
 }

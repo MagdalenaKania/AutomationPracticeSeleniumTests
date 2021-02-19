@@ -1,14 +1,17 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-
 
 public class ProductPage extends BasePage {
 
 
-    @FindBy(css = "a#new_comment_tab_btn")
+    public ProductPage(WebDriver driver) {
+		super(driver);
+	}
+
+	@FindBy(css = "a#new_comment_tab_btn")
     private WebElement firstReviewBtn;
 
     @FindBy(css = "input#comment_title")
@@ -42,7 +45,7 @@ public class ProductPage extends BasePage {
 
     public ProductPage clickOnSendBtn(){
         btnSend.click();
-        return new ProductPage();
+        return new ProductPage(this.driver);
     }
 
     public boolean isReviewAdded(){

@@ -1,14 +1,17 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class ContactUsPage extends BasePage{
 
+    public ContactUsPage(WebDriver driver) {
+		super(driver);
+	}
 
-
-    @FindBy(css = "select#id_contact")
+	@FindBy(css = "select#id_contact")
     private WebElement selectSubjectHeading;
 
     @FindBy(css = "textarea#message")

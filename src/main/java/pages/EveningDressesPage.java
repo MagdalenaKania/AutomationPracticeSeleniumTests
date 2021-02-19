@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,11 @@ import org.openqa.selenium.support.FindBy;
 public class EveningDressesPage extends BasePage {
 
 
-    @FindBy(css = "img[title='Printed Dress']")
+    public EveningDressesPage(WebDriver driver) {
+		super(driver);
+	}
+
+	@FindBy(css = "img[title='Printed Dress']")
     private WebElement imgProduct;
 
     @FindBy(xpath = "//a[@title='Add to cart']")
@@ -27,32 +32,30 @@ public class EveningDressesPage extends BasePage {
 
 
     public CartSummaryPage proceedingToCheckout() {
-        Actions actions = new Actions(getDriver());
+        Actions actions = new Actions(this.driver);
         actions.moveToElement(imgProduct).click(btnAddToCart).build().perform();
         explicitWait(btnProceedToCheckout);
         btnProceedToCheckout.click();
-        return new CartSummaryPage();
+        return new CartSummaryPage(this.driver);
     }
 
     public EveningDressesPage addingToCart() {
-        Actions actions = new Actions(getDriver());
+        Actions actions = new Actions(this.driver);
         actions.moveToElement(imgProduct).click(btnAddToCart).build().perform();
         explicitWait(btnContinueShopping);
         btnContinueShopping.click();
         return this;
     }
 
-
     public ProductPage clickOnMoreButton() {
-        Actions actions = new Actions(getDriver());
+        Actions actions = new Actions(this.driver);
         actions.moveToElement(imgProduct).click(btnMore).build().perform();
-        return new ProductPage();
+        return new ProductPage(this.driver);
 
     }
 
     public CartSummaryPage viewShoppingCart() {
         btnCart.click();
-        return new CartSummaryPage();
+        return new CartSummaryPage(this.driver);
     }
-
 }

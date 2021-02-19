@@ -1,15 +1,13 @@
-import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ItemReviewTest extends BaseTest {
-    private HomePage homePage = new HomePage();
 
-    @Test
+	@Test
     public void asLoginUserIShallAddItemReviewTest() {
-        boolean isReviewAdded = homePage.clickOnSignInPage()
+        boolean isReviewAdded = new HomePage(driver).clickOnSignInPage()
                 .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")
                 .clickOnSignInButton()

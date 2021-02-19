@@ -1,16 +1,17 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import pages.HomePage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 public class SignInTest extends BaseTest {
-
-
-    private HomePage homePage = new HomePage();
 
     @Test
     public void asNotRegisteredCustomerIShallCreateAnAccountTest() {
-        String headingText = homePage.clickOnSignInPage()
+    	String headingText = new HomePage(driver).clickOnSignInPage()
                 .inputEmailToCreateAccount("example" + Math.random() + "@email.com")
                 .clickOnCreateAnAccountButton()
                 .inputFirstName("User")
@@ -31,7 +32,7 @@ public class SignInTest extends BaseTest {
 
     @Test
     public void asRegisteredUserShallILoginTest() {
-        String textHeading = homePage.clickOnSignInPage()
+        String textHeading = new HomePage(driver).clickOnSignInPage()
                 .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")
                 .clickOnSignInButton()
@@ -42,7 +43,7 @@ public class SignInTest extends BaseTest {
 
     @Test
     public void asLoggedUserShallILogOutTest() {
-        String signInHeading = homePage.clickOnSignInPage()
+        String signInHeading = new HomePage(driver).clickOnSignInPage()
                 .inputEmailToLogin("testuser@example.com")
                 .inputPasswordToLogin("Password1234")
                 .clickOnSignInButton()

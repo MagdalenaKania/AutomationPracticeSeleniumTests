@@ -4,11 +4,10 @@ import pages.HomePage;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CartTest extends BaseTest {
-    private HomePage homePage = new HomePage();
 
-    @Test
+	@Test
     public void asLoginUserIShallBuyProductTest() {
-        boolean orderConfirmed = homePage.clickOnEveningDressesLink()
+        boolean orderConfirmed = new HomePage(driver).clickOnEveningDressesLink()
                 .proceedingToCheckout()
                 .clickOnProceedToCheckoutButton()
                 .inputEmailToLogin("testuser@example.com")
@@ -24,9 +23,9 @@ public class CartTest extends BaseTest {
         assertTrue(orderConfirmed, "Order not confirmed");
     }
 
-@Test
+	@Test
     public void asNotLoginUserIShallRemoveItemFromCartTest(){
-        boolean isCartEmpty = homePage.clickOnEveningDressesLink()
+        boolean isCartEmpty = new HomePage(driver).clickOnEveningDressesLink()
                 .addingToCart()
                 .viewShoppingCart()
                 .clickOnDeleteIcon()
